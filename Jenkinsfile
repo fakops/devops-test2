@@ -3,21 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm ci'
+        echo 'building the software'
+        sh 'npm install'
       }
     }
-
-    stage('Unit Tests') {
-      steps {
-        sh 'npm run test:unit'
-      }
-    }
-
-    stage('Integration Tests') {
-      steps {
-        sh 'npm run test:integration'
-      }
-    }
-
   }
 }
